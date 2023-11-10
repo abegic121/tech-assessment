@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "hRq5LE32FM5X20XYCn9zH+W2k6hUaPkSWKpnIm6CVZsfcU30JAo76QWHUCTUWUaRxWUvJSo8Dmlgrubv+hq6vg==",
+  "dgSpecHash": "81UZzfJ1v07NqrU7VJ3pjGoY+J22msgIkJVXnIgltVG1IYt2Ot3mjjXNNlVAb0FOJqpHAef9d7C49LQ1m6aMmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wassi\\Documents\\Sogeti\\tech-assessment\\CSharp\\CSharp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\CodeRepository\\CSharp\\CSharp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\abegi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\abegi\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\abegi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\abegi\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
+  ],
   "logs": []
 }
