@@ -39,7 +39,6 @@ namespace CSharp.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Order>>> Get()
         {
-            //retrieve by customerid
             return await this.orderService.Get();
         }
 
@@ -47,13 +46,14 @@ namespace CSharp.Controllers
         [Route("{orderId}")]
         public async Task<ActionResult<bool>> Update(int orderId, Order orderToUpdate)
         {
-            //update resource
             if (orderId <= 0 || orderId != orderToUpdate.Id)
             {
                 return BadRequest();
             }
 
+            //update resource
             //Depends on what client wants as return
+            //Example as boolean
             return await this.orderService.Update(orderToUpdate);
         }
 
@@ -69,6 +69,7 @@ namespace CSharp.Controllers
             }
 
             //Depends on what client wants as return
+            //Example as nothing
             await this.orderService.Delete(orderId);
             return Ok();
         }
