@@ -10,12 +10,12 @@ namespace CSharp.Repository
 {
     public interface IOrderRepository
     {
-        public Task Create();
+        public Task<int> Create(Order newOrder);
 
-        public Task<Customer> OrdersByCustomer(int customerId);
+        public Task<List<Order>> GetOrdersByCustomer(int customerId);
 
-        public Task<Customer> Update(int customerId);
+        public Task<bool> Update(Order orderToUpdate);
 
-        public Task<Customer> Delete(int customerId);
+        public Task<bool> Delete(int orderId);
     }
 }

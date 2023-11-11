@@ -19,24 +19,29 @@ namespace CSharp.Services
             this.orderRepository = orderRepository;
         }
 
-        public async Task<Customer> Delete(int customerId)
+        public async Task Delete(int orderId)
         {
-            return await this.orderRepository.Delete(customerId);
+            //any business logic
+            await this.orderRepository.Delete(orderId);
         }
 
-        public async Task<Customer> OrdersByCustomer(int customerId)
+        public async Task<List<Order>> GetOrdersByCustomer(int customerId)
         {
-            return await this.orderRepository.Delete(customerId);
+            //any business logic
+            return await this.orderRepository.GetOrdersByCustomer(customerId);
         }
 
-        public async Task Create()
+        public async Task<int> CreateOrder(Order newOrder)
         {
-            return await this.orderRepository.Create();
+            //any business logic
+            return await this.orderRepository.Create(newOrder);
         }
 
-        public async Task<Customer> Update(int customerId)
+        public async Task<bool> Update(Order orderToUpdate)
         {
-            return await this.orderRepository.Update(customerId);
+            //any business logic
+            return await this.orderRepository.Update(orderToUpdate);
         }
+
     }
 }
