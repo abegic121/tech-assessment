@@ -33,20 +33,19 @@ namespace CSharp.Controllers
                 return Conflict();
             } 
 
-            return Ok(await this.orderService.CreateOrder(newOrder));
+            return await this.orderService.Create(newOrder);
         }
-
+        
         [HttpGet]
-        [Route("customers/{customerId}")]
-        public async Task<ActionResult<List<Order>>> GetByCustomer(int customerId)
+        public async Task<ActionResult<List<Order>>> Get()
         {
             //retrieve by customerid
-            return Ok(await this.orderService.GetOrdersByCustomer(customerId));
+            return await this.orderService.Get();
         }
 
         [HttpPut]
         [Route("{orderId}")]
-        public async Task<ActionResult> Update(int orderId, Order orderToUpdate)
+        public async Task<ActionResult<bool>> Update(int orderId, Order orderToUpdate)
         {
             //update resource
             if (orderId <= 0 || orderId != orderToUpdate.Id)
@@ -54,7 +53,8 @@ namespace CSharp.Controllers
                 return BadRequest();
             }
 
-            return Ok(await this.orderService.Update(orderToUpdate));
+            //Depends on what client wants as return
+            return await this.orderService.Update(orderToUpdate);
         }
 
         [HttpDelete]
@@ -67,7 +67,8 @@ namespace CSharp.Controllers
             {
                 return BadRequest();
             }
-            
+
+            //Depends on what client wants as return
             await this.orderService.Delete(orderId);
             return Ok();
         }

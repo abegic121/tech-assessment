@@ -28,6 +28,12 @@ namespace CSharp.Repository
             catch (Exception e) { }
         }
 
+        //Primarily for testing purposes
+        public OrderRepository(List<Order> ordersToWrite) : this()
+        {
+            WriteOrdersFile(ordersToWrite);
+        }
+
         public async Task<int> Create(Order newOrder)
         {
             var existingOrders = await ReadOrdersFile();
@@ -47,9 +53,9 @@ namespace CSharp.Repository
             return newOrder.Id;
         }
 
-        public async Task<List<Order>> GetOrdersByCustomer(int customerId)
+        public async Task<List<Order>> Get()
         {
-            return (await ReadOrdersFile()).Where(s => s.CustomerId == customerId).ToList();
+            return await ReadOrdersFile();
         }
 
         public async Task<bool> Delete(int orderId)
@@ -71,7 +77,7 @@ namespace CSharp.Repository
         public async Task<bool> Update(Order orderToUpdate)
         {
             var existingOrders = await ReadOrdersFile();
-            var objToUpdateIndex = existingOrders.FindIndex(s => s.Id == orderToUpdate.Id); //.FirstOrDefault(s => s.Id == orderToUpdate.Id);
+            var objToUpdateIndex = existingOrders.FindIndex(s => s.Id == orderToUpdate.Id);
 
             if (objToUpdateIndex != -1)
             {

@@ -25,13 +25,20 @@ namespace CSharp.Services
             await this.orderRepository.Delete(orderId);
         }
 
+        public async Task<List<Order>> Get()
+        {
+            //any business logic
+            return await this.orderRepository.Get();
+        }
+
         public async Task<List<Order>> GetOrdersByCustomer(int customerId)
         {
             //any business logic
-            return await this.orderRepository.GetOrdersByCustomer(customerId);
+            //want to point out that if this was a db retrieval, this is not ok as all results would be pulled then filter would apply. 
+            return (await this.orderRepository.Get()).Where(s => s.CustomerId == customerId).ToList();
         }
 
-        public async Task<int> CreateOrder(Order newOrder)
+        public async Task<int> Create(Order newOrder)
         {
             //any business logic
             return await this.orderRepository.Create(newOrder);

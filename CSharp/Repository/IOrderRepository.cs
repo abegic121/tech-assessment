@@ -10,9 +10,10 @@ namespace CSharp.Repository
 {
     public interface IOrderRepository
     {
+
         public Task<int> Create(Order newOrder);
 
-        public Task<List<Order>> GetOrdersByCustomer(int customerId);
+        public Task<List<Order>> Get();     
 
         public Task<bool> Update(Order orderToUpdate);
 

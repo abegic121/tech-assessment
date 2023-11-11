@@ -10,9 +10,11 @@ namespace CSharp.Services.Interfaces
 {
     public interface IOrderService
     {
+        public Task<List<Order>> Get();
+
         public Task<List<Order>> GetOrdersByCustomer(int customerId);
 
-        public Task<int> CreateOrder(Order newOrder);
+        public Task<int> Create(Order newOrder);
 
         public Task<bool> Update(Order orderToUpdate);
 
