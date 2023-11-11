@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 using CSharp.Models;
 using CSharp.Services;
 using CSharp.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace CSharp.Controllers
 {
     [ApiController]
-    [Route("/orders")]
-    public class OrderController : ControllerBase
+    [AllowAnonymous]
+    [Route("[controller]")]
+    public class OrdersController : ControllerBase
     {
         private readonly IOrderService orderService;
 
-        public OrderController(IOrderService orderService)
+        public OrdersController(IOrderService orderService)
         {
             this.orderService = orderService;
         }
@@ -44,10 +46,10 @@ namespace CSharp.Controllers
 
         [HttpPut]
         [Route("{orderId}")]
-        public async Task<ActionResult> Update(Order orderToUpdate)
+        public async Task<ActionResult> Update(int orderId, Order orderToUpdate)
         {
             //update resource
-            if (orderToUpdate.Id <= 0)
+            if (orderId <= 0 || orderId != orderToUpdate.Id)
             {
                 return BadRequest();
             }
