@@ -42,3 +42,10 @@ C:\CodeRepository\CSharp\obj\Debug\netcoreapp3.1\CSharp.RazorTargetAssemblyInfo.
 C:\CodeRepository\CSharp\obj\Debug\netcoreapp3.1\CSharp.dll
 C:\CodeRepository\CSharp\obj\Debug\netcoreapp3.1\CSharp.pdb
 C:\CodeRepository\CSharp\obj\Debug\netcoreapp3.1\CSharp.genruntimeconfig.cache
+C:\CodeRepository\CSharp\obj\Debug\netcoreapp3.1\CSharp.csproj.AssemblyReference.cache
+C:\CodeRepository\CSharp\obj\Debug\netcoreapp3.1\CSharp.MvcApplicationPartsAssemblyInfo.cs
+C:\CodeRepository\CSharp\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\CodeRepository\CSharp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\CodeRepository\CSharp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\CodeRepository\CSharp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\CodeRepository\CSharp\obj\Debug\netcoreapp3.1\CSharp.csproj.CopyComplete

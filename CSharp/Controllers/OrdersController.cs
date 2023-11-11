@@ -14,7 +14,7 @@ namespace CSharp.Controllers
 {
     [ApiController]
     [AllowAnonymous]
-    [Route("[controller]")]
+    [Route("/orders")]
     public class OrdersController : ControllerBase
     {
         private readonly IOrderService orderService;
